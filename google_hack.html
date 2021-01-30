@@ -17,12 +17,13 @@
         </center>
         <script type="text/javascript">
                 //回车提交手动标签
-                $(".Pwn").bind('keydown',function(event){                        
-                        if(event.keyCode==13){
-                        $(".Pwn").trigger("click");
-                        }
-                        return false;
-                })
+                var input = document.getElementById("url");
+                input.addEventListener("keyup", function(event) {
+                    event.preventDefault();
+                    if (event.keyCode === 13) {
+                        document.getElementById("Pwn").click();
+                    }
+                });
                 
                 //生成谷歌链接
                 function getURL(){
