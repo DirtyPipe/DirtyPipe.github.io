@@ -9,13 +9,22 @@
                 <br>Hey Google Hack！<br>
     <br>
                 URL：<input type="text" id="url" placeholder="Keyword">
-                <input type="submit" onclick="getURL()" value="Pwn">
+                <input type="submit" id="Pwn" onclick="getURL()" value="Pwn">
                 <br><br>
                 <hr>
                 <div id="content">
                 </div>
         </center>
         <script type="text/javascript">
+                //回车提交手动标签
+                $(".Pwn").bind('keydown',function(event){                        
+                        if(event.keyCode==13){
+                        $(".Pwn").trigger("click");
+                        }
+                        return false;
+                })
+                
+                //生成谷歌链接
                 function getURL(){
                         document.getElementById("content").innerHTML = "";
                         var v = document.getElementById("url").value;
